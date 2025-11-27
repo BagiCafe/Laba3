@@ -1,6 +1,6 @@
 def factorial(n: int) -> int:
     if n < 0:
-        raise ValueError("Факториал определен только для неотрицательных чисел")
+        raise ValueError()
     if n == 0:
         return 1
 
@@ -12,7 +12,7 @@ def factorial(n: int) -> int:
 
 def factorial_recursive(n: int) -> int:
     if n < 0:
-        raise ValueError("Факториал определен только для неотрицательных чисел")
+        raise ValueError()
     if n == 0 or n == 1:
         return 1
     return n * factorial_recursive(n - 1)
@@ -20,7 +20,7 @@ def factorial_recursive(n: int) -> int:
 
 def fib(n: int) -> int:
     if n < 0:
-        raise ValueError("Число Фибоначчи определено только для неотрицательных n")
+        raise ValueError()
     if n == 0:
         return 0
     if n == 1:
@@ -34,7 +34,7 @@ def fib(n: int) -> int:
 
 def fib_recursive(n: int) -> int:
     if n < 0:
-        raise ValueError("Число Фибоначчи определено только для неотрицательных n")
+        raise ValueError()
     if n == 0:
         return 0
     if n == 1:

@@ -3,8 +3,8 @@ def bubble_sort(a: list[int]) -> list[int]:
     if not a:
         return []
     l = len(a)
-    for i in range(l):
-        for j in range(0, l-i-1):
+    for i in range(l - 1):
+        for j in range(l - i - 1):
             if a[j] > a[j+1]:
                 a[j], a[j+1] = a[j+1], a[j]
     return a
@@ -78,8 +78,8 @@ def bubble_sort_float(a: list[float]) -> list[float]:
     if not a:
         return []
     l = len(a)
-    for i in range(l):
-        for j in range(0, l - i - 1):
+    for i in range(l - 1):
+        for j in range(l - i - 1):
             if a[j] > a[j + 1]:
                 a[j], a[j + 1] = a[j + 1], a[j]
     return a
