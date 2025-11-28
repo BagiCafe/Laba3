@@ -1,10 +1,11 @@
 import random
 
+
 # Генерация случайного массива целых чисел
 def rand_int_array(n: int, lo: int, hi: int, *, distinct=False, seed=None) -> list[int]:
     random.seed(seed)
     if distinct:
-        if hi - lo + 1 < n:
+        if (hi - lo + 1) < n:
             raise ValueError(f"Невозможно сгенерировать {n} уникальных элементов в диапазоне [{lo}, {hi}]")
         return random.sample(range(lo, hi + 1), n)
     else:

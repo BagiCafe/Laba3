@@ -1,6 +1,6 @@
 def factorial(n: int) -> int:
     if n < 0:
-        raise ValueError()
+        raise ValueError("Факториал поддерживает только n >= 0")
     if n == 0:
         return 1
 
@@ -12,15 +12,15 @@ def factorial(n: int) -> int:
 
 def factorial_recursive(n: int) -> int:
     if n < 0:
-        raise ValueError()
+        raise ValueError("Факториал поддерживает только n >= 0")
     if n == 0 or n == 1:
         return 1
     return n * factorial_recursive(n - 1)
 
 
-def fib(n: int) -> int:
+def fibo(n: int) -> int:
     if n < 0:
-        raise ValueError()
+        raise ValueError("Фибоначчи поддерживает только n >= 0")
     if n == 0:
         return 0
     if n == 1:
@@ -32,11 +32,11 @@ def fib(n: int) -> int:
     return n2
 
 
-def fib_recursive(n: int) -> int:
+def fibo_recursive(n: int) -> int:
     if n < 0:
-        raise ValueError()
+        raise ValueError("Фибоначчи поддерживает только n >= 0")
     if n == 0:
         return 0
     if n == 1:
         return 1
-    return fib_recursive(n - 1) + fib_recursive(n - 2)
+    return fibo_recursive(n - 1) + fibo_recursive(n - 2)

@@ -32,7 +32,8 @@ def counting_sort(a: list[int]) -> list[int]:
         count[num] += 1
     rez = []
     for num in range(len(count)):
-        rez.extend([num] * count[num])
+        for i in range(count[num]):
+            rez.append(num)
     return rez
 
 
@@ -49,7 +50,8 @@ def radix_sort(a: list[int], base: int = 10) -> list[int]:
             buckets[digit].append(num)
         a = []
         for bucket in buckets:
-            a.extend(bucket)
+            for n in bucket:
+                a.append(n)
         discharge *= base
     return a
 
@@ -62,15 +64,17 @@ def bucket_sort(a: list[float], buckets: int | None = None) -> list[float]:
         buckets = len(a)
     bucket_list = [[] for i in range(buckets)]
     for num in a:
-        index = min(int(num * buckets), buckets - 1)
+        index = int(num * buckets)
+        if index >= buckets:
+            index = buckets - 1
         bucket_list[index].append(num)
 
     rez = []
     for bucket in bucket_list:
         if bucket:
             sorted_bucket = bubble_sort_float(bucket)
-            rez.extend(sorted_bucket)
-
+            for n in sorted_bucket:
+                rez.append(n)
     return rez
 
 # Пузырьковая сортировка для float
@@ -86,7 +90,7 @@ def bubble_sort_float(a: list[float]) -> list[float]:
 
 
 # Сортировка кучей
-def _heapify(a, n, i):
+def heapify(a, n, i):
     largest = i
     left = 2 * i + 1
     right = 2 * i + 2
@@ -96,15 +100,15 @@ def _heapify(a, n, i):
         largest = right
     if largest != i:
         a[i], a[largest] = a[largest], a[i]
-        _heapify(a, n, largest)
+        heapify(a, n, largest)
 
 def heap_sort(a: list[int]) -> list[int]:
     if not a:
         return []
     l = len(a)
-    for i in range(l // 2 - 1, -1, -1):
-        _heapify(a, l, i)
+    for i in range((l // 2) - 1, -1, -1):
+        heapify(a, l, i)
     for i in range(l - 1, 0, -1):
         a[i], a[0] = a[0], a[i]
-        _heapify(a, i, 0)
+        heapify(a, i, 0)
     return a
