@@ -22,7 +22,7 @@ def quick_sort(a: list[int]) -> list[int]:
     return quick_sort(left) + middle + quick_sort(right)
 
 
-# Подсчёт количества вхождений
+# Сортировка подсчётом количества вхождений
 def counting_sort(a: list[int]) -> list[int]:
     if not a:
         return []
@@ -56,7 +56,7 @@ def radix_sort(a: list[int], base: int = 10) -> list[int]:
     return a
 
 
-# Карманная сортировка
+# Блочная сортировка
 def bucket_sort(a: list[float], buckets: int | None = None) -> list[float]:
     if not a:
         return []
@@ -89,7 +89,7 @@ def bubble_sort_float(a: list[float]) -> list[float]:
     return a
 
 
-# Сортировка кучей
+# Пирамидальная сортировка
 def heapify(a, n, i):
     largest = i
     left = 2 * i + 1

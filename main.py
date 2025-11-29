@@ -42,8 +42,8 @@ def main():
     print(f"Быстрая: {all_sorting.quick_sort(test_int.copy())}")
     print(f"Подсчетом: {all_sorting.counting_sort(test_int.copy())}")
     print(f"Поразрядная: {all_sorting.radix_sort(test_int.copy())}")
-    print(f"Карманная (float): {all_sorting.bucket_sort(test_float.copy())}")
-    print(f"Кучей: {all_sorting.heap_sort(test_int.copy())}")
+    print(f"Блочная (float): {all_sorting.bucket_sort(test_float.copy())}")
+    print(f"Пирамидальная: {all_sorting.heap_sort(test_int.copy())}")
 
 
     print("\n --- Демонстрация СТЕКА ---")
