@@ -101,10 +101,7 @@ def main():
         row = f"{algo_name:<15}"
         for name_algo in arrays.keys():
             time = times.get(name_algo, 0)
-            if time < 0.001:
-                formatted_time = f"{time * 1000:.2f} мс"
-            else:
-                formatted_time = f"{time:.4f} с"
+            formatted_time = f"{time * 1000:.2f} мс"
             row += f" {formatted_time:<11}"
         print(row)
 
