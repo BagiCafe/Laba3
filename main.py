@@ -93,9 +93,9 @@ def main():
     rez = benchmark.benchmark_sorts(arrays, algos)
 
     print("\nВремя выполнения (секунды):")
-    print("-" * 85)
+    print("-" * 70)
     print(f"{'Алгоритм':<15} {'100 эл.':<11} {'500 эл.':<11} {'Почт. от':<11} {'Много дубликатов':<14}")
-    print("-" * 85)
+    print("-" * 70)
 
     for algo_name, times in rez.items():
         row = f"{algo_name:<15}"
