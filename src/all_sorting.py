@@ -34,7 +34,7 @@ def counting_sort(a: list[int]) -> list[int]:
     rez = []
     for num in range(len(count)):
         for i in range(count[num]):
-            rez.append(num)
+            rez.append(num + minim)
     return rez
 
 
