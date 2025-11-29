@@ -99,8 +99,8 @@ def main():
 
     for algo_name, times in rez.items():
         row = f"{algo_name:<15}"
-        for name_algo in arrays.keys():
-            time = times.get(name_algo, 0)
+        for algo_arr in arrays.keys():
+            time = times.get(algo_arr, 0)
             formatted_time = f"{time * 1000:.2f} мс"
             row += f" {formatted_time:<11}"
         print(row)
