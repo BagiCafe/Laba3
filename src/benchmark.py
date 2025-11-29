@@ -9,7 +9,7 @@ def timer_once(func, *args, **kwargs) -> float:
     return end - start
 
 
-# Сравнение производительности алгоритмов сортировки
+# Сравнивает производительности алгоритмов сортировки
 def benchmark_sorts(arrays: dict[str, list], algos: dict[str, callable]) -> dict[str, dict[str, float]]:
     rez = {}
     for name, func in algos.items():
