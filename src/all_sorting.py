@@ -27,9 +27,10 @@ def counting_sort(a: list[int]) -> list[int]:
     if not a:
         return []
     maxim = max(a)
-    count = [0] * (maxim + 1)
+    minim = min(a)
+    count = [0] * (maxim - minim + 1)
     for num in a:
-        count[num] += 1
+        count[num - minim] += 1
     rez = []
     for num in range(len(count)):
         for i in range(count[num]):
@@ -90,7 +91,7 @@ def bubble_sort_float(a: list[float]) -> list[float]:
 
 
 # Пирамидальная сортировка
-def heapify(a, n, i):
+def heapify(a: list[int], n: int, i: int):
     largest = i
     left = 2 * i + 1
     right = 2 * i + 2
